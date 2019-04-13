@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,39 +35,41 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     public CountryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View viewItem = layoutInflater.inflate(R.layout.countrylistitem,parent,false);
-        ViewHolder viewHolder = new ViewHolder(viewItem);
-        return viewHolder;
+        ViewHolder viewHolders = new ViewHolder(viewItem);
+        return viewHolders;
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
+    public void onBindViewHolder(ViewHolder holder, int position) {
         final Country country = countryList.get(position);
 
         try {
             holder.countryName.setText(country.getName());
             String imageName = country.getImage();
             InputStream inputStream = mContext.getAssets().open(imageName);
-            Drawable d = Drawable.createFromStream(inputStream,null);
+            Drawable d = Drawable.createFromStream(inputStream, null);
             holder.imgName.setImageDrawable(d);
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String itemId =country.getId();
-                Intent intent = new Intent(mContext, CountryDetail.class);
-                intent.putExtra(ITEM_ID_KEY,itemId);
-                mContext.startActivity(intent);
-                }
+
+            }
         });
     }
+
 
     public int getItemCount(){
         return countryList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+
+
+
+            public static class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView countryName;
         public ImageView imgName;
