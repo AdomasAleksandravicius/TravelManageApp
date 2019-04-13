@@ -33,8 +33,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     public CountryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View viewItem = layoutInflater.inflate(R.layout.countrylistitem,parent,false);
-        ViewHolder viewHolder = new ViewHolder(viewItem);
-        return viewHolder;
+        ViewHolder viewHolders = new ViewHolder(viewItem);
+        return viewHolders;
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position){
