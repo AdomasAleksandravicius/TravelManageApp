@@ -16,14 +16,15 @@ import java.util.List;
 
 import com.example.travelmanageapp.adapters.CountryAdapter;
 
+import com.example.travelmanageapp.models.City;
 import com.example.travelmanageapp.models.Country;
 import com.example.travelmanageapp.sample.SampleData;
 
 public class ListScreen extends AppCompatActivity {
 
     List<Country> countryList = SampleData.countryList;
-    List<String>itemNames = new ArrayList<>();
-    TextView button;
+    List<City> cityList = SampleData.cityList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

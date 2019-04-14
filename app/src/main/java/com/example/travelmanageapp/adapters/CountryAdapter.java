@@ -2,7 +2,6 @@ package com.example.travelmanageapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,6 +20,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import com.example.travelmanageapp.Screens.EditCountry;
+import com.example.travelmanageapp.models.City;
 import com.example.travelmanageapp.models.Country;
 
 import static android.support.v4.app.ActivityCompat.startActivityForResult;
@@ -29,6 +29,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     public static final String ITEM_ID_KEY = "item_id_key";
     private static final String CITY_EDIT_NAME_KEY = "city_edit_name_key" ;
     private List<Country> countryList;
+    private List<City> cityList;
     private Context mContext;
 
     public CountryAdapter(Context context, List<Country> countryList) {
@@ -71,27 +72,16 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView countryName;
-        private ImageView imgName;
         private ImageView moreButton;
 
         public ViewHolder(View itemView) {
             super(itemView);
             countryName = itemView.findViewById(R.id.itemNameText);
-            imgName = itemView.findViewById(R.id.imageView2);
             moreButton = itemView.findViewById(R.id.more_menu);
         }
 
         public void bind(final Country country) {
             countryName.setText(country.getName());
-            String imageName = country.getImage();
-
-            try {
-                InputStream inputStream = itemView.getContext().getAssets().open(imageName);
-                Drawable d = Drawable.createFromStream(inputStream, null);
-                imgName.setImageDrawable(d);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
             moreButton.setOnClickListener(new View.OnClickListener() {
                 @Override

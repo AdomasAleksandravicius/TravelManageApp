@@ -49,6 +49,14 @@
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="@id/name"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/describtionEdit"
+        />
+
     <Button
         android:id="@+id/addCountry"
         android:layout_width="wrap_content"

@@ -1,17 +1,17 @@
 package com.example.travelmanageapp.models;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Country {
     private String id;
     private String name;
     private String description;
-    private String image;
-
+    private List<City> cities;
     public Country() {
     }
 
-    public Country(String id ,String name, String description, String image) {
+    public Country(String id ,String name, String description) {
 
         if (id == null){
             id = UUID.randomUUID().toString();
@@ -20,7 +20,6 @@ public class Country {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.image = image;
     }
 
     public String getId() {
@@ -47,12 +46,5 @@ public class Country {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
 }

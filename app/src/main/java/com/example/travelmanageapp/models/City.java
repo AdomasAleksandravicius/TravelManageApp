@@ -3,14 +3,13 @@ package com.example.travelmanageapp.models;
 public class City {
 
     private String name;
-    private String description;
 
     public City() {
     }
 
-    public City(String name, String description) {
+    public City(String name) {
         this.name = name;
-        this.description = description;
+
     }
 
     public String getName() {
@@ -21,11 +20,4 @@ public class City {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

@@ -8,18 +8,6 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp">
 
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="16dp"
-        android:contentDescription="country"
-        tools:ignore="HardcodedText"
-        tools:srcCompat="@drawable/flag" />
-
     <TextView
         android:id="@+id/itemNameText"
         android:layout_weight="5"

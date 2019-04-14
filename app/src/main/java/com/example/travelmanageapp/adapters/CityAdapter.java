@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import com.example.travelmanageapp.R;
 import com.example.travelmanageapp.models.City;
-
-
-import java.security.acl.Group;
 import java.util.List;
 
 public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder>{
@@ -42,9 +39,9 @@ public CityAdapter(Context context, List<City> cityList) {
         return cityList.size();
     }
 
-    public void addCity(List<City> cities) {
+    public void addCity(City cities) {
         cityList.clear();
-        cityList.addAll(cities);
+        cityList.add(cities);
         notifyDataSetChanged();
     }
 
@@ -54,11 +51,11 @@ public CityAdapter(Context context, List<City> cityList) {
 
         private CityViewHolder(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.);
+            name = itemView.findViewById(R.id.city);
         }
 
-        private void bind(Group group) {
-            name.setText(group.getName());
+        private void bind(City city) {
+            name.setText(city.getName());
         }
     }
 }
