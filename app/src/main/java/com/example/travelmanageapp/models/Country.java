@@ -47,4 +47,11 @@ public class Country {
     }
 
 
+    public List<City> getCities() {
+        return cities;
+    }
+
+    public void setCities(List<City> cities) {
+        this.cities = cities;
+    }
 }

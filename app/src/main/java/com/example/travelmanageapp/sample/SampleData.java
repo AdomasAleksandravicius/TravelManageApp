@@ -19,9 +19,9 @@ public class SampleData {
         countryList = new ArrayList<>();
         countryList = new ArrayList<>();
 
-        addItem(new Country(null,"Japonija","geras salis daug visko pamatyt galima"),new City("hakamora"));
-        addItem(new Country(null,"Anglija","geras salis daug visko pamatyt galima,normaliai"),new City("hakamora"));
-        addItem(new Country(null,"Rusija","geras salis daug visko pamatyt galima keliaut"),new City("hakamora"));
+//        addItem(new Country(null,"Japonija","geras salis daug visko pamatyt galima"),new City("hakamora"));
+//        addItem(new Country(null,"Anglija","geras salis daug visko pamatyt galima,normaliai"),new City("hakamora"));
+//        addItem(new Country(null,"Rusija","geras salis daug visko pamatyt galima keliaut"),new City("hakamora"));
 
     }
 
@@ -30,6 +30,10 @@ public class SampleData {
         cityList.add(city);
         countryMap.put(country.getId(),country);
 
+    }
+
+    public static void addItem(Country country){
+        countryList.add(country);
     }
 
     public static Country findCountry(String id){

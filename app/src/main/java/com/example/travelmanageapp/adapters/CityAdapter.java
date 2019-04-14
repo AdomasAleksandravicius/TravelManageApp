@@ -9,17 +9,18 @@ import android.widget.TextView;
 
 import com.example.travelmanageapp.R;
 import com.example.travelmanageapp.models.City;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder>{
+public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder> {
 
-    private List<City> cityList;
+    private List<City> cityList = new ArrayList<>();
     private Context mContext;
 
-public CityAdapter(Context context, List<City> cityList) {
-        this.cityList = cityList;
+    public CityAdapter(Context context) {
         this.mContext = context;
-        }
+    }
 
     @Override
     public CityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -40,9 +41,12 @@ public CityAdapter(Context context, List<City> cityList) {
     }
 
     public void addCity(City cities) {
-        cityList.clear();
         cityList.add(cities);
         notifyDataSetChanged();
+    }
+
+    public List<City> getCities() {
+        return cityList;
     }
 
     class CityViewHolder extends RecyclerView.ViewHolder {
