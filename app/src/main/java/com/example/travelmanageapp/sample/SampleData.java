@@ -26,5 +26,14 @@ public class SampleData {
         countryMap.put(country.getId(),country);
 
     }
+    public static Country findCountry(String id){
+        Country country = null;
+        for (int i = 0; i <countryList.size() ; i++) {
+            if (id.equals(countryList.get(i).getId())){
+                 country = countryList.get(i);
+            }
+        }
+        return country;
+    }
 
 }

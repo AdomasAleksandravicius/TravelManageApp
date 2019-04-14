@@ -16,7 +16,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:text="2015/03/13 1:10"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="26sp" />
 
@@ -27,7 +27,16 @@
         android:layout_alignParentEnd="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="35dp"
+        android:scaleType="fitCenter"
         android:layout_marginEnd="63dp" />
+    <TextView
+        android:id="@+id/text_view_boat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Describtion"
+        android:textSize="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/img"/>
 
 
 
@@ -44,6 +53,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginTop="16dp"
                     android:textSize="15sp"
+                    android:layout_below="@+id/img"
                     android:layout_marginRight="45dp"
                     android:lines="2"
                     android:ellipsize="end"

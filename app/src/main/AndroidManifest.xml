@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Screens.EditCountry"
+            android:label="@string/title_activity_edit_country"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".CountryDetail"
             android:label="@string/title_activity_country_detail"
-            android:parentActivityName="com.example.travelmanageapp.Screens.ListScreen"
-
+            android:parentActivityName=".Screens.ListScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.Parent_Activity"
-                android:value=".Screens.ListScreen"/>
+                android:value=".Screens.ListScreen" />
         </activity>
-        <activity android:name="com.example.travelmanageapp.Screens.ListScreen" />
+        <activity android:name=".Screens.ListScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

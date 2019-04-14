@@ -20,10 +20,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import com.example.travelmanageapp.Screens.EditCountry;
 import com.example.travelmanageapp.models.Country;
+
+import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder> {
     public static final String ITEM_ID_KEY = "item_id_key";
+    private static final String CITY_EDIT_NAME_KEY = "city_edit_name_key" ;
     private List<Country> countryList;
     private Context mContext;
 
@@ -112,6 +116,11 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                                     deleteCountryById(itemIds);
                                 case R.id.edit:
                                     System.out.println("Edit");
+                                    String itemId1 = country.getId();
+                                    Intent switchScreens = new Intent(itemView.getContext(),EditCountry.class);
+                                    switchScreens.putExtra(CITY_EDIT_NAME_KEY, country.getName());
+                                    switchScreens.putExtra(ITEM_ID_KEY, itemId1);
+                                    itemView.getContext().startActivity(switchScreens);
                             }
                             return true;
                         }

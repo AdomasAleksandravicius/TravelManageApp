@@ -14,6 +14,7 @@ import com.example.travelmanageapp.sample.SampleData;
 public class AddActivity extends AppCompatActivity {
 
     private EditText mName;
+    private EditText mDescribtion;
     private Button mAdd;
 
     @Override
@@ -22,6 +23,7 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         mName = findViewById(R.id.name);
+        mDescribtion =findViewById(R.id.describtionEdit);
         mAdd = findViewById(R.id.addCountry);
 
         mAdd.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +37,7 @@ public class AddActivity extends AppCompatActivity {
     private void saveCountry() {
         Country newCountry = new Country();
         newCountry.setName(mName.getText().toString());
+        newCountry.setDescription(mDescribtion.getText().toString());
         SampleData.addItem(newCountry);
         finish();
     }

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Screens.EditCountry"
+    tools:showIn="@layout/activity_edit_country">
 
     <TextView
-        android:id="@+id/name1"
+        android:id="@+id/nameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
@@ -15,11 +18,11 @@
         android:layout_marginBottom="8dp"
         android:text="Country Name"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/name2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/name2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/describtionEdit1"
+        android:id="@+id/describtionEdit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
@@ -37,11 +40,11 @@
         android:layout_marginBottom="8dp"
         android:text="Describtion"
         android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/describtionEdit"
+        app:layout_constraintBottom_toTopOf="@+id/describtionEdit3"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/describtionEdit"
+        android:id="@+id/describtionEdit3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,12 +53,12 @@
         app:layout_constraintEnd_toEndOf="@id/name"/>
 
     <Button
-        android:id="@+id/addCountry"
+        android:id="@+id/editCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/describtionEdit"
+        app:layout_constraintTop_toBottomOf="@id/describtionEdit3"
         android:text="SAVE"/>
 
 </android.support.constraint.ConstraintLayout>

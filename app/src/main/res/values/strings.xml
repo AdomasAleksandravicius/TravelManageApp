@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TravelManageApp</string>
     <string name="title_activity_country_detail">CountryDetail</string>
+    <string name="title_activity_edit_country">EditCountry</string>
 </resources>
