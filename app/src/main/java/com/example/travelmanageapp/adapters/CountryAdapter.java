@@ -17,11 +17,13 @@ import com.example.travelmanageapp.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import com.example.travelmanageapp.Screens.EditCountry;
 import com.example.travelmanageapp.models.City;
 import com.example.travelmanageapp.models.Country;
+import com.example.travelmanageapp.sample.SampleData;
 
 import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
@@ -37,7 +39,17 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
         this.mContext = context;
     }
     public void deleteCountryById(String itemId){
-        countryList.remove(itemId);
+        SampleData.countryMap.remove(itemId);
+        notifyChanges();
+    }
+
+    public void notifyChanges(){
+        countryList.clear();
+
+        for(String s : SampleData.countryMap.keySet()){
+            countryList.add(SampleData.countryMap.get(s));
+        }
+
         notifyDataSetChanged();
     }
 
@@ -96,21 +108,24 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                             switch (item.getItemId()){
                                 case R.id.view:
                                     System.out.println("View");
-                                    String itemId = country.getId();
+                                    String itemId = SampleData.getString(country);
                                     Intent intent = new Intent(itemView.getContext(),CountryDetail.class);
                                     intent.putExtra(ITEM_ID_KEY,itemId);
                                     itemView.getContext().startActivity(intent);
+                                    break;
                                 case R.id.delete:
                                     System.out.println("Delete");
-                                    String itemIds = country.getId();
+                                    String itemIds = SampleData.getString(country);
                                     deleteCountryById(itemIds);
+                                    break;
                                 case R.id.edit:
                                     System.out.println("Edit");
-                                    String itemId1 = country.getId();
+                                    String itemId1 = SampleData.getString(country);
                                     Intent switchScreens = new Intent(itemView.getContext(),EditCountry.class);
                                     switchScreens.putExtra(CITY_EDIT_NAME_KEY, country.getName());
                                     switchScreens.putExtra(ITEM_ID_KEY, itemId1);
                                     itemView.getContext().startActivity(switchScreens);
+                                    break;
                             }
                             return true;
                         }

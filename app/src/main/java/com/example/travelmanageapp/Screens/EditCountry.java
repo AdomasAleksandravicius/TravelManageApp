@@ -21,6 +21,8 @@ public class EditCountry extends AppCompatActivity {
     private Button mEdit;
     private Bundle extras;
 
+    private String itemId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +31,12 @@ public class EditCountry extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mName = findViewById(R.id.name2);
-        mDescribtion =findViewById(R.id.describtionEdit3);
+        mDescribtion =findViewById(R.id.describtionEdit2);
         mEdit = findViewById(R.id.editCountry);
         extras = getIntent().getExtras();
-        String countryId = extras.getString(ITEM_ID_KEY);
-        final Country country = SampleData.findCountry(countryId);
-
-                mEdit.setOnClickListener(new View.OnClickListener() {
+        itemId = extras.getString(ITEM_ID_KEY);
+        final Country country = SampleData.countryMap.get(itemId);
+        mEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editCountry(country);
@@ -44,6 +45,14 @@ public class EditCountry extends AppCompatActivity {
         mName.setText(country.getName());
         mDescribtion.setText(country.getDescription());
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Country newCountry = new Country(null,mName.getText().toString(),mDescribtion.getText().toString());
+        SampleData.replaceCountry(itemId,newCountry);
+        super.onBackPressed();
     }
 
     private void editCountry(Country country) {

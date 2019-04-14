@@ -25,4 +25,5 @@
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
         android:src="@drawable/ic_more"/>
+
 </LinearLayout>

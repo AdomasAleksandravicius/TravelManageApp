@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,46 +9,103 @@
     tools:showIn="@layout/activity_country_detail">
 
     <TextView
+        android:id="@+id/nameLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="168dp"
+        android:text="Country Name"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="26sp" />
-
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_boat2"
+        android:id="@+id/DescriptionLabel1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Describtion"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="148dp"
+        android:text="Country Description"
         android:textSize="14dp"
-        android:layout_alignParentLeft="true"/>
+        app:layout_constraintBottom_toTopOf="@+id/descriptionView2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptionView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/cityNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="180dp"
+        android:text="City Name"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/cityNameView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cityNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionView2" />
+
+    <TextView
+        android:id="@+id/cityPlaceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="180dp"
+        android:text="City Places"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/cityPlaceView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cityPlaceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityNameView" />
+
+    <com.example.travelmanageapp.compound_control.RatingView
+        android:layout_width="262dp"
+        widt
+        android:layout_height="182dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="473dp" />
 
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="SomeText SomeText SomeText SomeTextandroid:elliklm;ml;;m;psize="
-                    android:id="@+id/single_description"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="16dp"
-                    android:textSize="15sp"
-                    android:layout_below="@+id/text_view_boat2"
-                    android:layout_marginRight="45dp"
-                    android:lines="2"
-                    android:ellipsize="end"
-                    android:layout_marginLeft="20dp"/>
-
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

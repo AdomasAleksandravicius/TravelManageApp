@@ -3,12 +3,14 @@ package com.example.travelmanageapp.models;
 public class City {
 
     private String name;
+    private String district;
 
     public City() {
     }
 
-    public City(String name) {
+    public City(String name,String district) {
         this.name = name;
+        this.district = district;
 
     }
 
@@ -20,4 +22,11 @@ public class City {
         this.name = name;
     }
 
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
 }
