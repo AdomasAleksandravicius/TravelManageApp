@@ -41,6 +41,8 @@ public class EditCountry extends AppCompatActivity {
                 editCountry(country);
             }
         });
+        mName.setText(country.getName());
+        mDescribtion.setText(country.getDescription());
 
     }
 
@@ -48,7 +50,6 @@ public class EditCountry extends AppCompatActivity {
 
         country.setName(mName.getText().toString());
         country.setDescription(mDescribtion.getText().toString());
-        SampleData.addItem(country);
         finish();
     }
 
