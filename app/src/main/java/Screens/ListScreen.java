@@ -35,7 +35,7 @@ public class ListScreen extends AppCompatActivity {
         setContentView(R.layout.activity_list_screen);
 
 
-        button = (TextView) findViewById(R.id.button);
+        button = (TextView) findViewById(R.id.button1);
         registerForContextMenu(button);
         CountryAdapter countryAdapter = new CountryAdapter(this,countryList);
 
