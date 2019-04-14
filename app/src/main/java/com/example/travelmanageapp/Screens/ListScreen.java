@@ -30,9 +30,6 @@ public class ListScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_screen);
 
-
-        button = (TextView) findViewById(R.id.button1);
-        registerForContextMenu(button);
         CountryAdapter countryAdapter = new CountryAdapter(this,countryList);
 
         RecyclerView view = (RecyclerView) findViewById(R.id.rvItems);
@@ -40,28 +37,5 @@ public class ListScreen extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.menu_list,menu);
-    }
 
-
-    public boolean onContextItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()){
-            case R.id.pmnuShare:
-                Toast.makeText(this,"Shared",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.pmnuDelete:
-                Toast.makeText(this,"delete",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.pmnuEdit:
-                Toast.makeText(this,"edit",Toast.LENGTH_SHORT).show();
-                return true;
-                default:
-                    return  super.onContextItemSelected(menuItem);
-        }
-
-
-    }
 }

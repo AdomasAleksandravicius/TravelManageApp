@@ -1,6 +1,7 @@
 package com.example.travelmanageapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.travelmanageapp.CountryDetail;
 import com.example.travelmanageapp.R;
 
 import java.io.IOException;
@@ -28,6 +30,10 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     public CountryAdapter(Context context, List<Country> countryList) {
         this.countryList = countryList;
         this.mContext = context;
+    }
+    public void deleteCountryById(String itemId){
+        countryList.remove(itemId);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -58,7 +64,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView countryName;
         private ImageView imgName;
@@ -71,7 +77,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
             moreButton = itemView.findViewById(R.id.more_menu);
         }
 
-        public void bind(Country country) {
+        public void bind(final Country country) {
             countryName.setText(country.getName());
             String imageName = country.getImage();
 
@@ -96,8 +102,14 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                             switch (item.getItemId()){
                                 case R.id.view:
                                     System.out.println("View");
+                                    String itemId = country.getId();
+                                    Intent intent = new Intent(itemView.getContext(),CountryDetail.class);
+                                    intent.putExtra(ITEM_ID_KEY,itemId);
+                                    itemView.getContext().startActivity(intent);
                                 case R.id.delete:
                                     System.out.println("Delete");
+                                    String itemIds = country.getId();
+                                    deleteCountryById(itemIds);
                                 case R.id.edit:
                                     System.out.println("Edit");
                             }
@@ -109,5 +121,6 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                 }
             });
         }
+
     }
 }

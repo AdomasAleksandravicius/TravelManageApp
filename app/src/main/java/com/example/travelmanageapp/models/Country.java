@@ -54,4 +54,5 @@ public class Country {
     public void setImage(String image) {
         this.image = image;
     }
+
 }
