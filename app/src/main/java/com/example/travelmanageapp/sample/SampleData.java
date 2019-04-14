@@ -1,11 +1,11 @@
-package sample;
+package com.example.travelmanageapp.sample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import models.Country;
+import com.example.travelmanageapp.models.Country;
 
 public class SampleData {
 

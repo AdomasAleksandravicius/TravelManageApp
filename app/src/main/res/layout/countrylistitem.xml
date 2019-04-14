@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="horizontal"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="5dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:paddingTop="5dp"
-    >
+    android:paddingBottom="5dp">
 
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="317dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
         android:contentDescription="country"
         tools:ignore="HardcodedText"
         tools:srcCompat="@drawable/flag" />
 
     <TextView
         android:id="@+id/itemNameText"
+        android:layout_weight="5"
         android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_toEndOf="@+id/imageView2"
-        android:layout_toRightOf="@id/imageView2"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
         android:text="Menu item"
         android:textSize="19sp" />
-</RelativeLayout>
+
+    <ImageView
+        android:id="@+id/more_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_more"/>
+</LinearLayout>

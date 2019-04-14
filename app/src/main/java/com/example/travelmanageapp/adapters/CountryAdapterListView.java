@@ -1,9 +1,7 @@
-package adapters;
+package com.example.travelmanageapp.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import models.Country;
+import com.example.travelmanageapp.models.Country;
 
 public class CountryAdapterListView extends ArrayAdapter<Country> {
     List<Country> mCountryList;

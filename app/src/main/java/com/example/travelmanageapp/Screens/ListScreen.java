@@ -1,15 +1,11 @@
-package Screens;
+package com.example.travelmanageapp.Screens;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +14,10 @@ import com.example.travelmanageapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapters.CountryAdapter;
-import adapters.CountryAdapterListView;
-import models.Country;
-import sample.SampleData;
+import com.example.travelmanageapp.adapters.CountryAdapter;
+
+import com.example.travelmanageapp.models.Country;
+import com.example.travelmanageapp.sample.SampleData;
 
 public class ListScreen extends AppCompatActivity {
 

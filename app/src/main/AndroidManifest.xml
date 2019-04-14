@@ -12,14 +12,14 @@
         <activity
             android:name=".CountryDetail"
             android:label="@string/title_activity_country_detail"
-            android:parentActivityName="Screens.ListScreen"
+            android:parentActivityName="com.example.travelmanageapp.Screens.ListScreen"
 
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.Parent_Activity"
                 android:value=".Screens.ListScreen"/>
         </activity>
-        <activity android:name="Screens.ListScreen" />
+        <activity android:name="com.example.travelmanageapp.Screens.ListScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

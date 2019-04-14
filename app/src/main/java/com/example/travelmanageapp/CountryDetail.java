@@ -6,13 +6,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import adapters.CountryAdapter;
-import models.Country;
-import sample.SampleData;
+import com.example.travelmanageapp.adapters.CountryAdapter;
+import com.example.travelmanageapp.models.Country;
+import com.example.travelmanageapp.sample.SampleData;
 
 public class CountryDetail extends AppCompatActivity {
 
