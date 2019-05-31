@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class AddActivity extends AppCompatActivity {
     private EditText mName;
     private EditText mDescribtion;
     private Button mAdd;
+    private Button mAddCity;
     private EditText cityName;
     private EditText place;
     private CityAdapter cityAdapter = new CityAdapter(this);
@@ -40,7 +42,7 @@ public class AddActivity extends AppCompatActivity {
         place = findViewById(R.id.cityPlace);
 
 
-        RecyclerView viewCity = findViewById(R.id.cityList);
+        RecyclerView viewCity = findViewById(R.id.city);
         viewCity.setAdapter(cityAdapter);
 
         mAdd.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +76,7 @@ public class AddActivity extends AppCompatActivity {
         Country newCountry = new Country();
         City city = new City();
         city.setName(cityName.getText().toString());
-        cityAdapter.addCity(cityList);
+        cityAdapter.addCity(city);
         newCountry.setName(mName.getText().toString());
         newCountry.setDescription(mDescribtion.getText().toString());
         SampleData.addItem(newCountry,city);

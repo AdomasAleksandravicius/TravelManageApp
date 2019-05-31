@@ -3,11 +3,6 @@ package com.example.travelmanageapp.Screens;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.view.ContextMenu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.travelmanageapp.R;
 
@@ -16,7 +11,7 @@ import java.util.List;
 
 import com.example.travelmanageapp.adapters.CountryAdapter;
 
-import com.example.travelmanageapp.compound_control.RatingView;
+import com.example.travelmanageapp.compound_control.RateBar;
 import com.example.travelmanageapp.models.City;
 import com.example.travelmanageapp.models.Country;
 import com.example.travelmanageapp.sample.SampleData;
@@ -43,6 +38,11 @@ public class ListScreen extends AppCompatActivity {
         countryAdapter = new CountryAdapter(this,countryList);
 
         RecyclerView view = (RecyclerView) findViewById(R.id.rvItems);
+
+        RateBar rateBar = findViewById(R.id.rating);
+
+        rateBar.setStars(3);
+
         view.setAdapter(countryAdapter);
 
     }

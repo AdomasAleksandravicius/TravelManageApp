@@ -36,7 +36,7 @@ public class CountryDetail extends AppCompatActivity {
         TextView cities = (TextView)findViewById(R.id.cityNameView);
         City city = new City();
 
-        for (int i = 0; i <country.returnCities().size() ; i++) {
+        for (int i = 0; i < country.returnCities().size() ; i++) {
              city = country.returnCities().get(i);
         }
 
